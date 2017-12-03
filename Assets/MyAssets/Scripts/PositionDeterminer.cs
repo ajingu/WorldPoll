@@ -21,6 +21,9 @@ public class PositionDeterminer : MonoBehaviour
     [SerializeField]
     ArrowManager arrowManager;
 
+    [SerializeField]
+    double lat, lng;
+
     private Vector2d _currentLocation;
     private Vector3 _targetPosition;
 
@@ -39,7 +42,7 @@ public class PositionDeterminer : MonoBehaviour
         var lastData = Input.location.lastData;
         _currentLocation = new Vector2d (lastData.latitude, lastData.longitude);
 #else
-        _currentLocation = new Vector2d(35.662968, 139.567926);
+        _currentLocation = new Vector2d(lat, lng);
 #endif
         _targetPosition = _map.transform.rotation * Conversions.GeoToWorldGlobePosition(_currentLocation, _globeFactory.Radius) + _map.transform.position;
 
