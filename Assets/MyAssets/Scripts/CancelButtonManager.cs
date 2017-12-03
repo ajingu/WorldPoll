@@ -4,7 +4,6 @@ namespace HoloToolkit.Unity.InputModule
 {
     public class CancelButtonManager : MonoBehaviour, IInputClickHandler
     {
-
         [SerializeField]
         GameObject[] choiceDescriptions;
 
